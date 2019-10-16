@@ -1,31 +1,29 @@
 # listdir
 
 ## What is it?
-This is a Python program that creates list of files in a directory and outputs it to a csv file, then putting it into a zip.
+This is a Python program that implements the UNIX command grep.
 
 ## Requirements
 - [Python 3](https://www.python.org/downloads/)
 
 ## How to use?
 ```
-python listdir.py [-h] [-n] path filename
+grep.py [-h] [-l] [-r] [-i] [-I] [-c] expression file_pattern directory
 ```
 
 ## Arguments
 ```
 positional arguments:
-  path             Directory for file listing.
-    default: Current directory.
-  filename         Name of the csv file output.
-    default: list.txt
+  expression          Expression to look for.
+  file_pattern        file name.
+  directory           Directory to look into.
 
 optional arguments:
-  -h, --help       show this help message and exit
-  -n, --nonrecursive  Lists files non-recursively.
-```
+  -h, --help          show this help message and exit
+  -l, --line_number   Print the line number.
+  -r, --recursive     Go through subdirectories.
+  -i, --ignore_case   Ignore case.
+  -I, --invert_match  Look for lines not containing the expression.
+  -c, --count         Print the number of line occurrences.
 
-## Example
-List all the files in /etc including subdirectories and output it to etc_output.zip
-```
-python listdir.py /etc etc_output
 ```
